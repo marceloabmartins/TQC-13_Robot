@@ -1,2 +1,2 @@
 # TQC-13_Robot
-Repositorio de arquivos Robot Framework
+Repositório de arquivos Robot Framework
