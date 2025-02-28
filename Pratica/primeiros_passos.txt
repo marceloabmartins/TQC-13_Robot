@@ -1,7 +1,7 @@
 cd ~/projects
 mkdir MyProject
 cd MyProject
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install robotframework
 robot --version
@@ -12,9 +12,14 @@ https://docs.robotframework.org/docs/getting_started/testing
 https://docs.robotframework.org/docs/getting_started/testing#install-robot-framework-in-a-virtual-environment
 https://docs.robotframework.org/docs/getting_started/ide#visual-studio-code
 https://docs.robotframework.org/docs/getting_started/how_to_write_rf
-
 https://github.com/MarketSquare/robotframework-requests#readme
+
 https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Create%20Dictionary
 https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#Create%20Session
 https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#output-files
 https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#executing-test-cases
+https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Return%20From%20Keyword
+https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#Status%20Should%20Be
+https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#POST%20On%20Session
+https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Be%20Equal
+https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Log%20To%20Console
