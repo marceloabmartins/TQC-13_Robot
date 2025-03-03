@@ -2071,31 +2071,31 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,23],[[4,5,6,0,[],[1,13,9],[],[[7,0,0,[],[1,19,2],[[0,8,9,0,10,11,0,0,[1,20,0],[]],[0,12,13,0,14,15,0,0,[1,21,0],[]],[0,8,9,0,10,16,0,0,[1,21,0],[]]]]],[],[1,1,0,0]]],[],[],[1,1,0,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,231],[[4,5,6,7,[],[0,24,205],[],[[8,0,0,[],[0,212,15,9],[[0,10,0,0,11,0,12,0,[0,213,13],[[0,13,0,0,14,0,15,0,[0,214,10],[[0,16,17,0,18,19,20,0,[1,215,1],[[216,2,21]]],[0,22,0,0,23,0,0,0,[1,216,2],[[0,16,17,0,18,24,25,0,[1,216,0],[[217,2,26]]],[0,27,28,0,29,30,0,0,[1,217,1],[[218,2,31]]]]],[0,32,28,0,33,34,35,0,[0,218,5],[[221,5,9]]],[8,0,0,0,0,36,0,0,[3,224,0],[]]]],[0,16,17,0,18,37,25,0,[3,224,0],[]],[0,38,39,0,0,0,40,0,[3,225,0],[]],[0,16,17,0,18,41,20,0,[3,225,0],[]],[0,32,28,0,33,42,35,0,[3,226,0],[]],[0,43,28,0,44,45,0,0,[3,226,0],[]],[8,0,0,0,0,46,0,0,[3,226,0],[]]]],[0,47,0,0,0,48,35,0,[3,227,0],[]]]]],[],[1,0,1,0]]],[],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*TQC-13 Robot","*/home/marcelo/Desenvolvimento/TQC-13_Robot","*..","*MyFirstTest","*/home/marcelo/Desenvolvimento/TQC-13_Robot/MyFirstTest.robot","*../MyFirstTest.robot","*Create A Random String","*Log To Console","*BuiltIn","*<p>Logs the given message to the console.\x3c/p>","*We are going to generate a random string","*Generate Random String","*String","*<p>Generates a string with a desired <code>length\x3c/code> from the given <code>chars\x3c/code>.\x3c/p>","*10","*We finished generating a random string"]);
+window.output["strings"] = window.output["strings"].concat(["*","*TQC-13 Robot","*/home/marcelo/Desenvolvimento/TQC-13_Robot","*..","*Api","*/home/marcelo/Desenvolvimento/TQC-13_Robot/api.robot","*../api.robot","*<p>Configurações iniciais do projeto\x3c/p>","*CT04 - Atualizar Status para false com sucesso","*OSError: Could not find a suitable TLS CA certificate bundle, invalid path: true","*Create User","*<p>Keyword que cria um usuário\x3c/p>","*${user_ID}","*Pegar Token","*<p>Request usada para pegar o token do admin\x3c/p>","*${token}","*Create Dictionary","*BuiltIn","*<p>Creates and returns a dictionary based on the given <code>items\x3c/code>.\x3c/p>","*mail=sysadmin@qacoders.com    password=1234@Test","*${body}","*${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}","*Criar Sessao","*<p>Criando sessão inicial para usar nas proximas requests\x3c/p>","*accept=applications/json    Content-Type=application/json","*${headers}","*${headers} = {'accept': 'applications/json', 'Content-Type': 'application/json'}","*Create Session","*RequestsLibrary","*<p>Create Session: create a HTTP session to a server\x3c/p>","*alias=ronbugado    url=${baseUrl}    headers=${headers}    verify=true","eNptjzEOwjAMRa/iLUtomCtl6s4CFzCpoYESh8SpqBB3J1WZUL297yd/uUuE4sMVjpSz5wAlL9QCjh6zTRzO5Yo9ayhptINIzK0xNd6tefNExz2l3PQ0NedkMHqjYSBcQvtW6BxFUS0ojHH0rrZxyOaWOSgNquMgFGR3miP9Savz0bA1jvnuqRbUPRYZ7IEDaRD/IC7yo5j4tUgrTZT8ZbanVGj7Zk/1J7uHL4HIWUw=","*POST On Session","*<p>Sends a POST request on a previously created HTTP Session.\x3c/p>","*alias=ronbugado    url=/login    json=${body}    verify=true","*${resposta}","*${resposta.json()[\"token\"]}","*Authorization=${token}    Content-Type=application/json","*Get Fake Person","*get_fake_person","*${person}","*fullName=${person}[name]    mail=${person}[email]    password=1234@Test    accessProfile=ADMIN    cpf=${person}[cpf]    confirmPassword=1234@Test","*alias=ronbugado    url=/user    headers=${headers}    json=${body}    verify=true","*Status Should Be","*<p>Fails if response status code is different than the expected.\x3c/p>","*201    ${resposta}","*${resposta.json()}[\"user\"][\"_id\"]","*Put Status","*id_user=${user_ID}    status=true"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:00","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:00","fail":0,"id":"s1","label":"TQC-13 Robot","name":"TQC-13 Robot","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"id":"s1-s1","label":"TQC-13 Robot.MyFirstTest","name":"MyFirstTest","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:00","fail":1,"id":"s1","label":"TQC-13 Robot","name":"TQC-13 Robot","pass":0,"skip":0},{"elapsed":"00:00:00","fail":1,"id":"s1-s1","label":"TQC-13 Robot.Api","name":"Api","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1740406696817;
+window.output["baseMillis"] = 1740931883461;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 28;
+window.output["generated"] = 236;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
 </script>
 <script type="text/javascript">
-window.settings = {"defaultLevel":"INFO","minLevel":"NONE","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
+window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
 </script>
 <title></title>
 </head>
