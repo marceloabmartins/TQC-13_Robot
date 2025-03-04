@@ -8,6 +8,8 @@ robot --version
 
 
 
+
+
 https://docs.robotframework.org/docs/getting_started/testing
 https://docs.robotframework.org/docs/getting_started/testing#install-robot-framework-in-a-virtual-environment
 https://docs.robotframework.org/docs/getting_started/ide#visual-studio-code
@@ -22,3 +24,7 @@ https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#
 https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#POST%20On%20Session
 https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Be%20Equal
 https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Log%20To%20Console
+
+
+
+pip install robotframework-seleniumlibrary
