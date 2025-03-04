@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-03-04T20:42:01.891135" rpa="false" schemaversion="5">
+<suite id="s1" name="Post" source="/home/marcelo/Desenvolvimento/TQC-13_Robot/post.robot">
+<test id="s1-t1" name="Criar usuário" line="16">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-04T20:42:01.959568" level="INFO">${letras} = zoha</msg>
+<var>${letras}</var>
+<arg>length=4</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-04T20:42:01.959357" elapsed="0.000240"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-04T20:42:01.959838" level="INFO">${numero} = 35</msg>
+<var>${numero}</var>
+<arg>2</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-04T20:42:01.959714" elapsed="0.000141"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-03-04T20:42:01.960025" level="INFO">${letras_minusculas} = zoha</msg>
+<var>${letras_minusculas}</var>
+<arg>${letras}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-03-04T20:42:01.959934" elapsed="0.000105"/>
+</kw>
+<kw name="Create user">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${userName}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-04T20:42:01.960395" elapsed="0.000087"/>
+</kw>
+<kw name="Realizar Login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-04T20:42:01.960827" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=sysadmin@qacoders.com</arg>
+<arg>password=1234@Test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-04T20:42:01.960693" elapsed="0.000148"/>
+</kw>
+<kw name="Criar Sessao">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-04T20:42:01.961098" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-04T20:42:01.961013" elapsed="0.000098"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-04T20:42:01.961296" level="INFO">Creating Session using : alias=develop, url=https://develop.qacoders-academy.com.br/api/, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>alias=develop</arg>
+<arg>url=${baseUrl}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-04T20:42:01.961163" elapsed="0.000255"/>
+</kw>
+<status status="PASS" start="2025-03-04T20:42:01.960905" elapsed="0.000556"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-03-04T20:42:03.206618" level="INFO">POST Request : url=https://develop.qacoders-academy.com.br/api/login 
+ path_url=/api/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-03-04T20:42:03.206709" level="INFO">POST Response : url=https://develop.qacoders-academy.com.br/api/login 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 04 Mar 2025 23:44:35 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"536-XaMkMerRWvAXkRzuZYmL2xj5uwU"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"655e91a1748c617229bcd64e","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$6/EvGom7BqM5ecGYaXCms.ysx1xLahOZi/Tzx1Ofoe8eeAVnmhBsy","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"quarta-feira, 22/11/2023, 20:41:20 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"655e91a1748c617229bcd64f"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVlOTFhMTc0OGM2MTcyMjliY2Q2NGUiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ2L0V2R29tN0JxTTVlY0dZYVhDbXMueXN4MXhMYWhPWmkvVHp4MU9mb2U4ZWVBVm5taEJzeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAyMi8xMS8yMDIzLCAyMDo0MToyMCBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY1NWU5MWExNzQ4YzYxNzIyOWJjZDY0ZiJ9XSwiX192IjowLCJpYXQiOjE3NDExMzE4NzUsImV4cCI6MTc0MTIxODI3NX0.fJD882gHGAuvac6fJZXTBh6Lr-dV062vmrROdluqAcI"} 
+ </msg>
+<msg time="2025-03-04T20:42:03.206798" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=develop</arg>
+<arg>url=/login</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-04T20:42:01.961515" elapsed="1.245298"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${resposta}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-03-04T20:42:03.206924" elapsed="0.000160"/>
+</kw>
+<return>
+<value>${resposta.json()["token"]}</value>
+<status status="PASS" start="2025-03-04T20:42:03.207119" elapsed="0.000040"/>
+</return>
+<msg time="2025-03-04T20:42:03.207473" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVlOTFhMTc0OGM2MTcyMjliY2Q2NGUiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ2L0V2R29...</msg>
+<var>${token}</var>
+<status status="PASS" start="2025-03-04T20:42:01.960573" elapsed="1.246917"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-04T20:42:03.207764" level="INFO">${body} = {'fullName': 'Clarice Allana Araujozoha', 'mail': 'clarice_araujozoha@macaubas.com', 'password': '1234@Test', 'accessProfile': 'ADMIN', 'cpf': '08161182835', 'confirmPassword': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>fullName=Clarice Allana Araujo${userName}</arg>
+<arg>mail=clarice_araujo${userName}@macaubas.com</arg>
+<arg>password=1234@Test</arg>
+<arg>accessProfile=ADMIN</arg>
+<arg>cpf=081611828${numero}</arg>
+<arg>confirmPassword=1234@Test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-04T20:42:03.207567" elapsed="0.000211"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-03-04T20:42:03.383443" level="INFO">POST Request : url=https://develop.qacoders-academy.com.br/api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVlOTFhMTc0OGM2MTcyMjliY2Q2NGUiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ2L0V2R29tN0JxTTVlY0dZYVhDbXMueXN4MXhMYWhPWmkvVHp4MU9mb2U4ZWVBVm5taEJzeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAyMi8xMS8yMDIzLCAyMDo0MToyMCBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY1NWU5MWExNzQ4YzYxNzIyOWJjZDY0ZiJ9XSwiX192IjowLCJpYXQiOjE3NDExMzE4NzUsImV4cCI6MTc0MTIxODI3NX0.fJD882gHGAuvac6fJZXTBh6Lr-dV062vmrROdluqAcI 
+ path_url=/api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVlOTFhMTc0OGM2MTcyMjliY2Q2NGUiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ2L0V2R29tN0JxTTVlY0dZYVhDbXMueXN4MXhMYWhPWmkvVHp4MU9mb2U4ZWVBVm5taEJzeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAyMi8xMS8yMDIzLCAyMDo0MToyMCBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY1NWU5MWExNzQ4YzYxNzIyOWJjZDY0ZiJ9XSwiX192IjowLCJpYXQiOjE3NDExMzE4NzUsImV4cCI6MTc0MTIxODI3NX0.fJD882gHGAuvac6fJZXTBh6Lr-dV062vmrROdluqAcI 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '189'} 
+ body=b'{"fullName": "Clarice Allana Araujozoha", "mail": "clarice_araujozoha@macaubas.com", "password": "1234@Test", "accessProfile": "ADMIN", "cpf": "08161182835", "confirmPassword": "1234@Test"}' 
+ </msg>
+<msg time="2025-03-04T20:42:03.383579" level="INFO">POST Response : url=https://develop.qacoders-academy.com.br/api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVlOTFhMTc0OGM2MTcyMjliY2Q2NGUiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ2L0V2R29tN0JxTTVlY0dZYVhDbXMueXN4MXhMYWhPWmkvVHp4MU9mb2U4ZWVBVm5taEJzeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVhcnRhLWZlaXJhLCAyMi8xMS8yMDIzLCAyMDo0MToyMCBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY1NWU5MWExNzQ4YzYxNzIyOWJjZDY0ZiJ9XSwiX192IjowLCJpYXQiOjE3NDExMzE4NzUsImV4cCI6MTc0MTIxODI3NX0.fJD882gHGAuvac6fJZXTBh6Lr-dV062vmrROdluqAcI 
+ status=201, reason=Created 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 04 Mar 2025 23:44:35 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '492', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"1ec-HhyFqFH5byf+SFaUSofsvygXWnM"'} 
+ body={"msg":"Olá Clarice Allana Araujozoha, cadastro realizado com sucesso.","user":{"_id":"67c79063c106476a95f023b8","fullName":"Clarice Allana Araujozoha","mail":"clarice_araujozoha@macaubas.com","accessProfile":"ADMIN","cpf":"08161182835","status":true,"audit":[{"registeredBy":{"userId":"655e91a1748c617229bcd64e","userLogin":"sysadmin@qacoders.com"},"registrationDate":"terça-feira, 04/03/2025, 20:44:35 BRT","registrationNumber":"QaCoders-5238","_id":"67c79063c106476a95f023b9"}],"__v":0}} 
+ </msg>
+<msg time="2025-03-04T20:42:03.383697" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=develop</arg>
+<arg>url=/user/?token=${token}</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-04T20:42:03.207838" elapsed="0.175877"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${resposta}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-03-04T20:42:03.383831" elapsed="0.000142"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${resposta.json()["user"]["_id"]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-04T20:42:03.384031" elapsed="0.000312"/>
+</kw>
+<arg>${letras_minusculas}</arg>
+<arg>${numero}</arg>
+<status status="PASS" start="2025-03-04T20:42:01.960185" elapsed="1.424207"/>
+</kw>
+<tag>test001</tag>
+<status status="PASS" start="2025-03-04T20:42:01.958708" elapsed="1.425775"/>
+</test>
+<doc>Pegar Token</doc>
+<status status="PASS" start="2025-03-04T20:42:01.891805" elapsed="1.492943"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">test001</stat>
+</tag>
+<suite>
+<stat name="Post" id="s1" pass="1" fail="0" skip="0">Post</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
