@@ -1,4 +1,5 @@
 *** Settings ***
+Resource    ../resources/resource.robot
 Documentation    Teste Projeto
 
 *** Variables ***
