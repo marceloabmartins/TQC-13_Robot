@@ -3,8 +3,8 @@ Documentation    Configurações iniciais do projeto
 
 ## Importando as Bibliotecas
 Library    RequestsLibrary
-Library    libs/get_fake_person.py
 #Library    urllib3
+Library    /home/marcelo/Desenvolvimento/TQC-13_Robot/libs/get_fake_person.py
 
 
 *** Variables ***

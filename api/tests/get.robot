@@ -1,10 +1,6 @@
 *** Settings ***
-Documentation    Pegar Token
-
-Library    RequestsLibrary
-Library    String
-Library    Collections
-
+Documentation    Get Users
+Resource    ../resources/resource.robot
 
 *** Variables ***
 ${baseUrl}    https://develop.qacoders-academy.com.br/api/
